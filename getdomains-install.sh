@@ -58,10 +58,9 @@ add_tunnel() {
     echo "6) Amnezia WireGuard"
     echo "7) Amnezia WireGuard For Youtube"
     echo "8) Skip this step"
-
-    while true; do
+    
     read -r -p '' TUNNEL
-        case $TUNNEL in 
+    case $TUNNEL in 
 
         1) 
             TUNNEL=wg
@@ -103,10 +102,7 @@ add_tunnel() {
             TUNNEL=0
             break
             ;;
-
-        
-        esac
-    done
+    esac
 
     if [ "$TUNNEL" == 'wg' ]; then
         printf "\033[32;1mConfigure WireGuard\033[0m\n"
