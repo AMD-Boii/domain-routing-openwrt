@@ -59,56 +59,49 @@ add_tunnel() {
     echo "7) Amnezia WireGuard For Youtube"
     echo "8) Skip this step"
 
-    while true; do
-    read -r -p '' TUNNEL
+    while true; do    
+        read -r -p "Enter your choice (1-8): " TUNNEL
+
         case $TUNNEL in 
-
-        1) 
-            TUNNEL=wg
-            break
-            ;;
-
-        2)
-            TUNNEL=ovpn
-            break
-            ;;
-
-        3) 
-            TUNNEL=singbox
-            break
-            ;;
-
-        4) 
-            TUNNEL=tun2socks
-            break
-            ;;
-
-        5) 
-            TUNNEL=wgForYoutube
-            break
-            ;;
-
-        6) 
-            TUNNEL=awg
-            break
-            ;;
-
-        7) 
-            TUNNEL=awgForYoutube
-            break
-            ;;
-
-        8)
-            echo "Skip"
-            TUNNEL=0
-            break
-            ;;
-
-        *)
-            echo "Choose from the following options"
-            ;;
+            1) 
+                TUNNEL=wg
+                break
+                ;;
+            2)
+                TUNNEL=ovpn
+                break
+                ;;
+            3) 
+                TUNNEL=singbox
+                break
+                ;;
+            4) 
+                TUNNEL=tun2socks
+                break
+                ;;
+            5) 
+                TUNNEL=wgForYoutube
+                break
+                ;;
+            6) 
+                TUNNEL=awg
+                break
+                ;;
+            7) 
+                TUNNEL=awgForYoutube
+                break
+                ;;
+            8)
+                echo "Skipping this step"
+                TUNNEL=0
+                break
+                ;;
+            *)
+                echo "Invalid choice. Please choose a number between 1 and 8."
+                ;;
         esac
     done
+
 
     if [ "$TUNNEL" == 'wg' ]; then
         printf "\033[32;1mConfigure WireGuard\033[0m\n"
