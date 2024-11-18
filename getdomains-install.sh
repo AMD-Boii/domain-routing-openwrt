@@ -104,9 +104,9 @@ add_tunnel() {
             break
             ;;
 
-        *)
-            echo "Choose from the following options"
-            ;;
+        # *)
+        #     echo "Choose from the following options"
+        #     ;;
         esac
     done
 
